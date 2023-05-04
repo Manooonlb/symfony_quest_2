@@ -81,6 +81,12 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "prepare-db": [
+            "php bin/console d:d:d --if-exists --force",
+            "php bin/console d:d:c",
+            "php bin/console d:m:m -n",
+            "php bin/console d:f:l --append"
         ]
     },
     "conflict": {
@@ -93,6 +99,7 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.2.*",
         "symfony/css-selector": "6.2.*",
