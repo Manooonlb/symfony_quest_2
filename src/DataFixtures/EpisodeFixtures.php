@@ -16,24 +16,28 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
             [
                 'name' => 'La veuve noire',
                 'synopsis' => "Six mois après la mort de son mari, Norma Bates et son fils, Norman, déménagent à White Bine Bay, dans l'Oregon. Elle a acheté un hôtel dans une vente aux enchères. Le site est petit, mais elle espère faire tourner cette affaire malgré les mises en garde et les menaces de l'ancien propriétaire Keith Summers. La ville projette, en effet, de construire une route contournant la ville.",
-                'seasonReference' => 'saison 1',
+                'number'=> 1,
+                'seasonReference' => 'saison_1_BatesMotel',
             ],
             [
                 'name' => 'Hello, New York !',
                 'synopsis' => "Hannah, 24 ans, vit à New York et rêve de devenir écrivaine. Elle tombe des nues lorsque ses parents annoncent qu'ils ont décidé de lui couper les vivres. Elle trouve un peu de réconfort dans les bras d'Adam, un acteur excentrique qu'elle fréquente lorsqu'il daigne répondre à ses messages.",
-                'seasonReference' => 'saison 1',
+                'number'=> 1,
+                'seasonReference' => 'saison_1_Girls',
             ],
             [
                 'name' => 'Episode 1',
                 'synopsis' => "La découverte d'un corps qui serait celui de son frère Axel conduit Zoe Walker à Ibiza. Là-bas, elle renoue avec Marcus, un vieil ami d'Axel, DJ et trafiquant de drogue.",
-                'seasonReference' => 'saison 1',
+                'number'=> 1,
+                'seasonReference' => 'saison_1_WhiteLines',
             ],
         ];
 
         foreach ($episodes as $episodeName){
             $episode = new Episode();
             $episode->setName($episodeName['name']);
-            $episode->setSeason($this->getReference('season_' . $episodeName['seasonReference']));
+            $episode->setSeason($this->getReference($episodeName['seasonReference']));
+            $episode->setNumber($episodeName['number']);
             $episode->setSynopsis($episodeName['synopsis']);
 
             $manager->persist($episode);

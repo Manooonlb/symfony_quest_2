@@ -32,13 +32,19 @@ class Program
     #[ORM\OneToMany(mappedBy: 'program', targetEntity: Season::class, orphanRemoval: true)]
     private Collection $seasons;
 
-    #[ORM\OneToMany(mappedBy: 'program', targetEntity: Episode::class, orphanRemoval: true)]
-    private Collection $episodes;
+    // #[ORM\OneToMany(mappedBy: 'program', targetEntity: Episode::class, orphanRemoval: true)]
+    // private Collection $episodes;
+
+    #[ORM\Column(length: 255)]
+    private ?string $country = null;
+
+    #[ORM\Column]
+    private ?int $year = null;
 
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
-        $this->episodes = new ArrayCollection();
+        // $this->episodes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -124,32 +130,56 @@ class Program
         return $this;
     }
 
-    /**
-     * @return Collection<int, Episode>
-     */
-    public function getEpisodes(): Collection
+    // /**
+    //  * @return Collection<int, Episode>
+    //  */
+    // public function getEpisodes(): Collection
+    // {
+    //     return $this->episodes;
+    // }
+
+    // public function addEpisode(Episode $episode): self
+    // {
+    //     if (!$this->episodes->contains($episode)) {
+    //         $this->episodes->add($episode);
+    //         $episode->setProgram($this);
+    //     }
+
+    //     return $this;
+    // }
+
+    // public function removeEpisode(Episode $episode): self
+    // {
+    //     if ($this->episodes->removeElement($episode)) {
+    //         // set the owning side to null (unless already changed)
+    //         if ($episode->getProgram() === $this) {
+    //             $episode->setProgram(null);
+    //         }
+    //     }
+
+    //     return $this;
+    // }
+
+    public function getCountry(): ?string
     {
-        return $this->episodes;
+        return $this->country;
     }
 
-    public function addEpisode(Episode $episode): self
+    public function setCountry(string $country): self
     {
-        if (!$this->episodes->contains($episode)) {
-            $this->episodes->add($episode);
-            $episode->setProgram($this);
-        }
+        $this->country = $country;
 
         return $this;
     }
 
-    public function removeEpisode(Episode $episode): self
+    public function getYear(): ?int
     {
-        if ($this->episodes->removeElement($episode)) {
-            // set the owning side to null (unless already changed)
-            if ($episode->getProgram() === $this) {
-                $episode->setProgram(null);
-            }
-        }
+        return $this->year;
+    }
+
+    public function setYear(int $year): self
+    {
+        $this->year = $year;
 
         return $this;
     }

@@ -20,12 +20,15 @@ class Episode
     #[ORM\JoinColumn(nullable: false)]
     private ?Season $season = null;
 
-    #[ORM\ManyToOne(inversedBy: 'episodes')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Program $program = null;
+    // #[ORM\ManyToOne(inversedBy: 'episodes')]
+    // #[ORM\JoinColumn(nullable: false)]
+    // private ?Program $program = null;
 
     #[ORM\Column(length: 1000)]
     private ?string $synopsis = null;
+
+    #[ORM\Column]
+    private ?int $number = null;
 
     public function getId(): ?int
     {
@@ -56,17 +59,17 @@ class Episode
         return $this;
     }
 
-    public function getProgram(): ?Program
-    {
-        return $this->program;
-    }
+    // public function getProgram(): ?Program
+    // {
+    //     return $this->program;
+    // }
 
-    public function setProgram(?Program $program): self
-    {
-        $this->program = $program;
+    // public function setProgram(?Program $program): self
+    // {
+    //     $this->program = $program;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getSynopsis(): ?string
     {
@@ -76,6 +79,18 @@ class Episode
     public function setSynopsis(string $synopsis): self
     {
         $this->synopsis = $synopsis;
+
+        return $this;
+    }
+
+    public function getNumber(): ?int
+    {
+        return $this->number;
+    }
+
+    public function setNumber(int $number): self
+    {
+        $this->number = $number;
 
         return $this;
     }

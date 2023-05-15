@@ -16,32 +16,25 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
         
         // $product = new Product();
         // $manager->persist($product);
-        $seasons = [
-            [
-                'name' => 'S1',
-                'programReference' => 'program_BatesMotel',
-            ],
-            [
-                'name' => 'Saison_1',
-                'programReference' => 'program_Girls',
-            ],
-            [
-                'name' => 'S1',
-                'programReference' => 'program_WhiteLines',
-            ],
-        ];
-
-        foreach ($seasons as $seasonName){
+        foreach (ProgramFixtures::PROGRAMS as $program){
             $season = new Season();
-            $season->setName($seasonName['name']);
-            $season->setProgram($this->getReference($seasonName['programReference']));
-
+            $season->setNumber(1);
+            $season->setYear(rand(1990,2020));
+            $season->setDescription("bla bla bla");
+            $reference = 'program_' . $program['title'];
+            $season->setProgram($this->getReference($reference));
+            //... set other season's properties
             $manager->persist($season);
-            $this->addReference('season_' . $seasonName['name'], $season);
-            }
+    
+            $seasonReference = 'saison_1_' . $program['title'];
+            $this->addReference($seasonReference, $season);
 
-            $manager->flush();
         }
+        
+        $manager->flush();
+        }
+    
+    
 
         public function getDependencies()
         {
