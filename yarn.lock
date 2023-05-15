@@ -1027,9 +1027,9 @@
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
-"@symfony/webpack-encore@^4.0.0":
+"@symfony/webpack-encore@^4.3.0":
   version "4.3.0"
-  resolved "https://registry.npmjs.org/@symfony/webpack-encore/-/webpack-encore-4.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-4.3.0.tgz#2cf025bd9ee33b176cf6c040c5fb610415cc66f8"
   integrity sha512-YhM6xh+aKmrWS7X7Y2CUDte4wiUm9WIo0w07KTwDLLQnOUdMHRf3wa680WXH/I3oHqD+grFa7BHPpR0sfmoGMQ==
   dependencies:
     "@nuxt/friendly-errors-webpack-plugin" "^2.5.1"
@@ -2315,7 +2315,7 @@ faye-websocket@^0.11.3:
 
 file-loader@^6.0.0:
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"
+  resolved "https://registry.npmjs.org/file-loader/-/file-loader-6.2.0.tgz"
   integrity sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==
   dependencies:
     loader-utils "^2.0.0"
@@ -2904,9 +2904,9 @@ make-dir@^3.0.2, make-dir@^3.1.0:
     semver "^6.0.0"
 
 mdb-ui-kit@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/mdb-ui-kit/-/mdb-ui-kit-6.2.0.tgz#77834110f7dd742d42ba01adfe4205cf8af12a35"
-  integrity sha512-7rIgyHx0/y4Png/ojCGz81cgP+9xIsoCxCFNQrNaglSM/4p0gPvaXxGfKpE/WuwpFCEDJNc4wLE6HzcdlcvvAQ==
+  version "6.3.0"
+  resolved "https://registry.npmjs.org/mdb-ui-kit/-/mdb-ui-kit-6.3.0.tgz"
+  integrity sha512-lrR45hTxFpQnA+Wa4evwtRhHyu04HIKzqCH30VwNC2CpV9d6oq299nvtVPOaRSAn5u/WhXzi9gA8Jq8NFTBjew==
 
 mdn-data@2.0.14:
   version "2.0.14"
