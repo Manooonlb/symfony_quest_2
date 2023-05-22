@@ -8,6 +8,8 @@ use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
+
+
 class SeasonFixtures extends Fixture implements DependentFixtureInterface
 {
 
@@ -20,10 +22,9 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
             $season = new Season();
             $season->setNumber(1);
             $season->setYear(rand(1990,2020));
-            $season->setDescription("bla bla bla");
+            $season->setDescription("description de la saison");
             $reference = 'program_' . $program['title'];
             $season->setProgram($this->getReference($reference));
-            //... set other season's properties
             $manager->persist($season);
     
             $seasonReference = 'saison_1_' . $program['title'];

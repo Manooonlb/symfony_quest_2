@@ -59,18 +59,6 @@ class Episode
         return $this;
     }
 
-    // public function getProgram(): ?Program
-    // {
-    //     return $this->program;
-    // }
-
-    // public function setProgram(?Program $program): self
-    // {
-    //     $this->program = $program;
-
-    //     return $this;
-    // }
-
     public function getSynopsis(): ?string
     {
         return $this->synopsis;
